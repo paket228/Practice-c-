@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	cout << "складывать	   | +" << endl << "вычитать	   | -" << endl << "умножать	   | *" << endl << "делить		   | /" << endl;
+	double a;
+	double b;
+	char c;
+	cout << "Первое число: ";
+	cin >> a;
+	cout << "Второе число: ";
+	cin >> b;
+	cout << "Выбирите функцию: (+, -, *, /, %)" << endl;
+	cin >> c;
+	if (c == '+') {
+		cout << a <<" + "<< b << " = " << a + b;
+	}
+	else if (c == '-') {
+		cout << a << " - " << b << " = " << a - b;
+	}
+	else if (c == '*') {
+		cout << a <<" * " << b << " = " << a * b;
+	}
+	else if (c == '/') {
+		cout << a << "/" << b << " = " << a / b;
+	}
+	else if (a != 0, b != 0) {
+		cout << "no";
+	}
+}
+
