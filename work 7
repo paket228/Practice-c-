@@ -1,0 +1,151 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(0, "");
+	cout << "Календарь"  << endl << "[1] Январь" << endl << "[2] Февраль" << endl << "[3] Март " << endl << "[4] Апрель " << endl << "[5] Май" << endl << "[6] Июнь" << endl << "[7] Июль " << endl << "[8] Август" << endl << "[9] Сентябрь" << endl << "[10] Октябрь" << endl << "[11] Ноябрь" << endl << "[12] Декабрь" << endl;
+	cout << "Выбирите месяц: ";
+	short a;
+	cin >> a;
+	switch (a) {
+	case 1:
+		cout << "Выбран Январь";
+		break;
+	case 2:
+		cout << "Выбран Февраль";
+		break;
+	case 3:
+		cout << "Выбран Март";
+		break;
+	case 4:
+		cout << "Выбран Апрель";
+		break;
+	case 5:
+		cout << "Выбран Май";
+		break;
+	case 6:
+		cout << "Выбран Июнь";
+		break;
+	case 7:
+		cout << "Выбран Июль";
+		break;
+	case 8:
+		cout << "Выбран Август";
+		break;
+	case 9:
+		cout << "Выбран Сентябрь";
+		break;
+	case 10:
+		cout << "Выбран Октябрь";
+		break;
+	case 11:
+		cout << "Выбран Ноябрь";
+		break;
+	case 12:
+		cout << "Выбран Декабрь";
+		break;
+	default:
+		cout << "Ошибка";
+	}
+	cout << endl << "Выбирите день: ";
+	short b;
+	cin >> b;
+	switch (b)
+	case 1: {
+		cout << "Календарь: 1 день ";
+		break;
+	case 2:
+		cout << "Календарь: 2 день ";
+		break;
+	case 3:
+		cout << "Календарь: 3 день ";
+		break;
+	case 4:
+		cout << "Календарь: 4 день ";
+		break;
+	case 5:
+		cout << "Календарь: 5 день ";
+		break;
+	case 6:
+		cout << "Календарь: 6 день ";
+		break;
+	case 7:
+		cout << "Календарь: 7 день ";
+		break;
+	case 8:
+		cout << "Календарь: 8 день ";
+		break;
+	case 9:
+		cout << "Календарь: 9 день ";
+		break;
+	case 10:
+		cout << "Календарь: 10 день ";
+		break;
+	case 11:
+		cout << "Календарь: 11 день ";
+		break;
+	case 12:
+		cout << "Календарь: 12 день ";
+		break;
+	case 13:
+		cout << "Календарь: 14 день ";
+		break;
+	case 14:
+		cout << "Календарь: 15 день ";
+		break;
+	case 15:
+		cout << "Календарь: 16 день ";
+		break;
+	case 16:
+		cout << "Календарь: 17 день ";
+		break;
+	case 17:
+		cout << "Календарь: 18 день ";
+		break;
+	case 18:
+		cout << "Календарь: 19 день ";
+		break;
+	case 19:
+		cout << "Календарь: 20 день ";
+		break;
+	case 20:
+		cout << "Календарь: 21 день ";
+		break;
+	case 21:
+		cout << "Календарь: 22 день ";
+		break;
+	case 22:
+		cout << "Календарь: 23 день ";
+		break;
+	case 23:
+		cout << "Календарь: 24 день ";
+		break;
+	case 24:
+		cout << "Календарь: 25 день ";
+		break;
+	case 25:
+		cout << "Календарь: 26 день ";
+		break;
+	case 26:
+		cout << "Календарь: 27 день ";
+		break;
+	case 27:
+		cout << "Календарь: 28 день ";
+		break;
+	case 28:
+		cout << "Календарь: 29 день ";
+		break;
+	case 29:
+		cout << "Календарь: 30 день ";
+		break;
+	case 30:
+		cout << "Календарь: 31 день ";
+		break;
+	case 31:
+		cout << "Календарь: 12 день ";
+		break;
+	default:
+		cout << "Ошибка";
+	}
+	
+	
