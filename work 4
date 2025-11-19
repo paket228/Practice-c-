@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int a;
+	cout << "Введите число: ";
+	cin >> a;
+	cout << endl;
+	cout << "Решите пример: " << a << " * 2" << endl;
+	int b;
+	cin >> b;
+	if (a * 2 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 3" << endl;
+	cin >> b;
+	if (a * 3 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 4" << endl;
+	cin >> b;
+	if (a * 4 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 5" << endl;
+	cin >> b;
+	if (a * 5 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 6" << endl;
+	cin >> b;
+	if (a * 6 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 7" << endl;
+	cin >> b;
+	if (a * 7 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 8" << endl;
+	cin >> b;
+	if (a * 8 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	cout << "Решите пример: " << a << " * 9" << endl;
+	cin >> b;
+	if (a * 9 == b) {
+		cout << "Правильно!" << endl;
+	}
+	else {
+		cout << "Неправльно!" << endl;
+	}
+	return 0;
+}
