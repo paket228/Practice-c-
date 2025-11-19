@@ -1,0 +1,106 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    setlocale(0, "");
+
+    while (true) {
+        system("cls");
+        cout << "УГАДАЙ ЧИСЛО" << endl;
+        cout << "[1] НАЧАТЬ" << endl << "[2] ВЫХОД" << endl;
+        int a;
+        cin >> a;
+
+        if (a == 1) {
+            cout << "ВЫ ВЫБРАЛИ НАЧАТЬ ИГРУ!" << endl;
+
+
+            int a1, a2, a3;
+
+
+            a1 = rand() % 10 + 1;
+
+
+            do {
+                a2 = rand() % 10 + 1;
+            } while (a2 == a1);
+
+
+            do {
+                a3 = rand() % 10 + 1;
+            } while (a3 == a1 || a3 == a2);
+
+
+            int attempts = 5;
+            int guessed = 0;
+
+
+            while (attempts > 0 && guessed < 3) {
+                cout << "ВЫ УГАДАЛИ [" << guessed << "/3]" << endl;
+                cout << "ПОПЫТОК [" << attempts << "]" << endl;
+                cout << "УГАДАТЬ ЧИСЛО: ";
+
+                int b;
+                cin >> b;
+
+
+                if (b < 1 || b > 10) {
+                    cout << "ОШИБКА! НУЖНО ВВЕССТИ ОТ 1 ДО 10." << endl << endl;
+                    continue;
+                }
+
+                bool found = false;
+
+                if (b == a1 && a1 != -1) {
+                    cout << "ВЕРНО! ЧИСЛО " << b << " УГАДОНО" << endl;
+                    a1 = -1;
+                    guessed++;
+                    found = true;
+                }
+                else if (b == a2 && a2 != -1) {
+                    cout << "ВЕРНО! ЧИСЛО " << b << " УГАДОНО" << endl;
+                    a2 = -1;
+                    guessed++;
+                    found = true;
+                }
+                else if (b == a3 && a3 != -1) {
+                    cout << "ВЕРНО! ЧИСЛО " << b << " УГАДОНО" << endl;
+                    a3 = -1;
+                    guessed++;
+                    found = true;
+                }
+
+                if (!found) {
+                    cout << "НЕВЕРНО! " << b << endl;
+                }
+
+                attempts--;
+                cout << endl;
+            }
+            cout << "РЕЗУЛЬТАТ" << endl;
+            if (guessed == 3) {
+                cout << "ПОЗДРАВЛЯЕМ! ВЫ ВЫИГРАЛИ!" << endl;
+                cout << "ВЫ УГАДАЛИ ВСЕ 3 ЧИСЛА!" << endl;
+            }
+            else {
+                cout << " ИГРА ОКОНЧЕНА ВЫ УГАДАЛИ " << guessed << " ИЗ 3 ЧИСЕЛ" << endl;
+                cout << "ЗАГАДАНЫЕ ЧИСЛА: ";
+                if (a1 != -1) cout << a1 << " ";
+                if (a2 != -1) cout << a2 << " ";
+                if (a3 != -1) cout << a3;
+                cout << endl;
+            }
+        }
+        else if (a == 2) {
+            cout << "ВЫ ВЫБРАЛИ ЗАКОНЧИТЬ ИГРУ!" << endl;
+            break;
+        }
+        else {
+            cout << "НЕВЕРНЫЙ ВЫБОР, ВЫБИРЕТЕ 1 ИЛИ 2" << endl << endl;
+        }
+        short asd;
+        cin >> asd;
+    }
+
+    return 0;
+}
