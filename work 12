@@ -1,0 +1,785 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	cout << "\n" << "			ВНИМАНИЕ ПРИ ВВОДЕ НЕ ЧИСЛОВОГО ЗНАЧАНИЯ ВОЗНИКАЕТ БЕСКОНЕЧНЫЙ ЦИКЛ!" << "\n" << endl;
+	string a;
+	string b;
+	string c;
+	string vopros = "8";
+	int ochko = 0;
+	int life = 3;
+	bool exitProgram = false;
+	string name = "Player";
+	while (!exitProgram) {
+
+		cout << "\n" << "ПРИВЕТСТВУЕМ ВАС В ВИКТОРИНЕ!" << "\n" << endl << "[1] НАЧАТЬ ИГРУ" << endl << "[2] ПРАВИЛА" << endl << "[3] НАСТРОЙКИ" << endl << "[4] ВЫХОД" << endl << "[ ] ВВЕДИТЕ ПУНКТ: ";
+		cin >> a;
+		if (a == "1") {
+			ochko = 0;
+			life = 3;
+			if (vopros == "8") {
+				
+
+				cout << "НАЧНЁМ ЖЕ!" << endl;
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life  << " | " << "Вопросы: " << vopros << endl;
+				cout << "Как называется мозг компьютера, который выполняет все вычисления?" << endl;
+				cout << "[1] Оперативная память" << endl;
+				cout << "[2] Жесткий диск" << endl;
+				cout << "[3] Процессор" << endl;
+				cout << "[4] Материнская плата" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "3") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//==============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Какая компания создала операционную систему Windows?" << endl;
+				cout << "[1] Apple" << endl;
+				cout << "[2] Microsoft" << endl;
+				cout << "[3] Google" << endl;
+				cout << "[4] IBM" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//===========
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Как называется гигантская всемирная сеть, соединяющая миллиарды компьютеров по всему миру?" << endl;
+				cout << "[1] Локальная сеть (LAN)" << endl;
+				cout << "[2] Интернет" << endl;
+				cout << "[3] Браузер" << endl;
+				cout << "[4] Wi-Fi" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//===========
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Какая 'большая кошка' является названием одной из старых версий операционной системы macOS ? " << endl;
+				cout << "[1] Леопард" << endl;
+				cout << "[2] Любая из больших кошек (Tiger, Leopard, Panther и т.д.)" << endl;
+				cout << "[3] Волк" << endl;
+				cout << "[4] Медведь" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Как называется программа, которую используют для просмотра веб-страниц (например, Google Chrome или Safari)?" << endl;
+				cout << "[1] Поисковик" << endl;
+				cout << "[2] Сайт" << endl;
+				cout << "[3] Браузер" << endl;
+				cout << "[4] Приложение" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "3") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Что означает аббревиатура 'USB' ? " << endl;
+				cout << "[1] Универсальный системный блок" << endl;
+				cout << "[2] Универсальная последовательная шина" << endl;
+				cout << "[3] Унифицированное сетевое соединение" << endl;
+				cout << "[4] Устройство связи" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Как называется устройство, которое позволяет компьютеру подключаться к Интернету без проводов?" << endl;
+				cout << "[1] Модем" << endl;
+				cout << "[2] Роутер" << endl;
+				cout << "[3] Сетевой адаптер" << endl;
+				cout << "[4] Флешка" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Сколько битов в одном байте?" << endl;
+				cout << "[1] 4" << endl;
+				cout << "[2] 8" << endl;
+				cout << "[3] 128" << endl;
+				cout << "[4] 16" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+			}
+			//=============
+			else if (vopros == "10") {
+					cout << "НАЧНЁМ ЖЕ!" << endl;
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << " | " << "Вопросы: " << vopros  << endl;
+					cout << "Как называется мозг компьютера, который выполняет все вычисления?" << endl;
+					cout << "[1] Оперативная память" << endl;
+					cout << "[2] Жесткий диск" << endl;
+					cout << "[3] Процессор" << endl;
+					cout << "[4] Материнская плата" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "3") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//==============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Какая компания создала операционную систему Windows?" << endl;
+					cout << "[1] Apple" << endl;
+					cout << "[2] Microsoft" << endl;
+					cout << "[3] Google" << endl;
+					cout << "[4] IBM" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//===========
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Как называется гигантская всемирная сеть, соединяющая миллиарды компьютеров по всему миру?" << endl;
+					cout << "[1] Локальная сеть (LAN)" << endl;
+					cout << "[2] Интернет" << endl;
+					cout << "[3] Браузер" << endl;
+					cout << "[4] Wi-Fi" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//===========
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Какая 'большая кошка' является названием одной из старых версий операционной системы macOS ? " << endl;
+					cout << "[1] Леопард" << endl;
+					cout << "[2] Любая из больших кошек (Tiger, Leopard, Panther и т.д.)" << endl;
+					cout << "[3] Волк" << endl;
+					cout << "[4] Медведь" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Как называется программа, которую используют для просмотра веб-страниц (например, Google Chrome или Safari)?" << endl;
+					cout << "[1] Поисковик" << endl;
+					cout << "[2] Сайт" << endl;
+					cout << "[3] Браузер" << endl;
+					cout << "[4] Приложение" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "3") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Что означает аббревиатура 'USB' ? " << endl;
+					cout << "[1] Универсальный системный блок" << endl;
+					cout << "[2] Универсальная последовательная шина" << endl;
+					cout << "[3] Унифицированное сетевое соединение" << endl;
+					cout << "[4] Устройство связи" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Как называется устройство, которое позволяет компьютеру подключаться к Интернету без проводов?" << endl;
+					cout << "[1] Модем" << endl;
+					cout << "[2] Роутер" << endl;
+					cout << "[3] Сетевой адаптер" << endl;
+					cout << "[4] Флешка" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Сколько битов в одном байте?" << endl;
+					cout << "[1] 4" << endl;
+					cout << "[2] 8" << endl;
+					cout << "[3] 128" << endl;
+					cout << "[4] 16" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}								
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Что такое браузер?" << endl;
+					cout << "[1] Программа для создания текстов" << endl;
+					cout << "[2] Программа для просмотра веб‑страниц" << endl;
+					cout << "[3] Вид компьютерного вируса" << endl;
+					cout << "[4] Устройство для печати" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//=============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Какой из этих форматов относится к изображениям?" << endl;
+					cout << "[1] doc" << endl;
+					cout << "[2] mp3" << endl;
+					cout << "[3] jpg" << endl;
+					cout << "[4] exe" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "3") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+			
+			}
+			//============
+			else if (vopros == "12") {				
+					cout << "НАЧНЁМ ЖЕ!" << endl;
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << " | " << "Вопросы: " << vopros << endl;
+					cout << "Как называется мозг компьютера, который выполняет все вычисления?" << endl;
+					cout << "[1] Оперативная память" << endl;
+					cout << "[2] Жесткий диск" << endl;
+					cout << "[3] Процессор" << endl;
+					cout << "[4] Материнская плата" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "3") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//==============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Какая компания создала операционную систему Windows?" << endl;
+					cout << "[1] Apple" << endl;
+					cout << "[2] Microsoft" << endl;
+					cout << "[3] Google" << endl;
+					cout << "[4] IBM" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//===========
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Как называется гигантская всемирная сеть, соединяющая миллиарды компьютеров по всему миру?" << endl;
+					cout << "[1] Локальная сеть (LAN)" << endl;
+					cout << "[2] Интернет" << endl;
+					cout << "[3] Браузер" << endl;
+					cout << "[4] Wi-Fi" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//===========
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Какая 'большая кошка' является названием одной из старых версий операционной системы macOS ? " << endl;
+					cout << "[1] Леопард" << endl;
+					cout << "[2] Любая из больших кошек (Tiger, Leopard, Panther и т.д.)" << endl;
+					cout << "[3] Волк" << endl;
+					cout << "[4] Медведь" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Как называется программа, которую используют для просмотра веб-страниц (например, Google Chrome или Safari)?" << endl;
+					cout << "[1] Поисковик" << endl;
+					cout << "[2] Сайт" << endl;
+					cout << "[3] Браузер" << endl;
+					cout << "[4] Приложение" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "3") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Что означает аббревиатура 'USB' ? " << endl;
+					cout << "[1] Универсальный системный блок" << endl;
+					cout << "[2] Универсальная последовательная шина" << endl;
+					cout << "[3] Унифицированное сетевое соединение" << endl;
+					cout << "[4] Устройство связи" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Как называется устройство, которое позволяет компьютеру подключаться к Интернету без проводов?" << endl;
+					cout << "[1] Модем" << endl;
+					cout << "[2] Роутер" << endl;
+					cout << "[3] Сетевой адаптер" << endl;
+					cout << "[4] Флешка" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+					//============
+					cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+					cout << " - Сколько битов в одном байте?" << endl;
+					cout << "[1] 4" << endl;
+					cout << "[2] 8" << endl;
+					cout << "[3] 128" << endl;
+					cout << "[4] 16" << endl;
+					cout << "Ведите номер ответа: ";
+					cin >> b;
+					if (b == "2") {
+						cout << " правильно! " << "\n" << endl;
+						ochko = ochko + 1;
+					}
+					else {
+						cout << " не првильно!" << "\n " << endl;
+						life = life - 1;
+					}
+					if (life <= 0) {
+						cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+						cout << "Нажмите Enter чтобы вернуться в меню...";
+						cin.ignore();
+						cin.get();
+						continue;
+					}
+				
+				//=============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Какой из этих форматов относится к изображениям?" << endl;
+				cout << "[1] doc" << endl;
+				cout << "[2] mp3" << endl;
+				cout << "[3] jpg" << endl;
+				cout << "[4] exe" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "3") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//=============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Что означает аббревиатура «Wi‑Fi»?" << endl;
+				cout << "[1] Wireless Fidelity (беспроводная точность)" << endl;
+				cout << "[2] Это не аббревиатура — просто бренд" << endl;
+				cout << "[3] Wireless File (беспроводной файл)" << endl;
+				cout << "[4] Web File Interface (интерфейс веб‑файлов)" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "2") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				//=============
+				cout << "Имя: " << name << " | " << "Очки: " << ochko << " | " << "Жизни: " << life << endl;
+				cout << " - Какой символ обязательно есть в электронном адресе?" << endl;
+				cout << "[1] &" << endl;
+				cout << "[2] ^" << endl;
+				cout << "[3] *" << endl;
+				cout << "[4] @" << endl;
+				cout << "Ведите номер ответа: ";
+				cin >> b;
+				if (b == "4") {
+					cout << " правильно! " << "\n" << endl;
+					ochko = ochko + 1;
+				}
+				else {
+					cout << " не првильно!" << "\n " << endl;
+					life = life - 1;
+				}
+				if (life <= 0) {
+					cout << "ВЫ ПРОИГРАЛИ, ВЫ УМЕРЛИ!" << "\n" << endl;
+					cout << "Нажмите Enter чтобы вернуться в меню...";
+					cin.ignore();
+					cin.get();
+					continue;
+				}
+				}
+			//============
+
+			if (ochko > 6) {
+				cout << "ВСЕ ПРАВИЛЬНО, ВЫ ПОБЕДИЛИ!" << "\n" << endl;
+			}
+			else if (ochko < 6 && ochko > 3) {
+				cout << "Вы были близки к полной победе но тоже хороший результат." << "\n" << endl;
+			}
+			else if (ochko < 3 && ochko > 1) {
+				cout << "Вы были близки к проигрошу" << "\n" << endl;
+			}
+			else {
+				cout << "ВЫ ПРОИГРАЛИ!" << "\n" << endl;
+			}
+
+			cout << endl << "Нажмите Enter чтобы вернуться в меню...";
+			cin.ignore();
+			cin.get();
+
+		}
+		else if (a == "2") {
+			cout << " - Игрок получает очки за правильный ответ на вопрос" << endl << " - Игрок проходит дальше за правильный ответ" << endl << " - Игрок теряет жизнь при неправильном ответе" << endl;
+			cout << endl << "Нажмите Enter чтобы вернуться в меню...";
+			cin.ignore();
+			cin.get();
+		}
+		else if (a == "3") {
+			cout << endl << "[ ] НАСТРОЙКИ" << endl;
+			cout << "[1] Имя игрока" << endl;
+			cout << "[2] КОЛ-ВО ВОПРОСОВ" << endl;
+			cout << "[3] ОТСУТСТВУЕТ" << endl;
+			cout << "[ ] ВВЕДИТЕ ПУНКТ: ";
+			cin >> c;
+			if (c == "1") {
+				cout << "ВВЕДИТЕ ИМЯ: ";
+				cin >> name;
+			}
+			else if (c == "2") {
+				cout << "ВВЕДИТЕ КОЛИЧЕСТВО ВОПРОСОВ 8 - 10 - 12" << "\n" << ">> ";
+				cin >> vopros;
+				if (vopros != "8" && vopros != "10" && vopros != "12") {
+					cout << "НЕПРАВИЛЬНО ВВЕДИТЕ ЧИСЛО";
+				}				
+			}
+		}
+		else if (a == "4") {
+			cout << "ДОСВИДАНИЕ, ЖДЁМ ВАС ЕЩЁ!";
+			break;
+			fclose;
+		}
+		else {
+			cout << "ОШИБКА ВВОД НЕ ПРАВИЛЬНОГО ЧИСЛА";
+			cout << endl << "Нажмите Enter чтобы вернуться в меню...";
+			cin.ignore();
+			cin.get();
+		}
+	}
+}
