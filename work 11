@@ -62,8 +62,9 @@ int main() {
 				
 				}
 			
-			}			
+			}	
 		else if (menu == 2) {
+			system("cls");
 			cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n";
 			cout << "[1] Заполненый\n";
 			cout << "[2] Пустой\n";
@@ -73,10 +74,20 @@ int main() {
 				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n";
 				cout << "Длина квадрата:";
 				cin >> dlina_kvadrata;
-				cout << "Шрина квадрата:";
+				cout << "Текстура квадрата:";
+				cin >> textura;			 
+				system("cls");
+				while (dlina_kvadrata) {
+					while (i < dlina_kvadrata) {
+					cout << textura;
+					i++;
+					}
+				}
+				
+				break;
 			}
 			else if (parametr == 2) {
-
+				cout << "NO";
 			}
 			else {
 				cout << "ПОШЁЛ НАХУЙ";
