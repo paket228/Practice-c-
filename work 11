@@ -3,62 +3,89 @@ using namespace std;
 
 int main() {
 	setlocale(0, "");
-
+	// Переменые 1
 	int i = 0;
-	int a;
-	int b;
-	int c;
-	string v;
-
+	int menu;
+	int menu_2;
+	int dlina_linii;
+	char textura;
+	// Переменые 2
+	int dlina_kvadrata;
+	int shirina_kvadrata;
+	int parametr;
+	//Меню
 	while (true) {
-		cout << "Программа 'Геометрические фигуры'\n";
+		system("cls");
+		cout << "-------------- ГЕОМЕТРИЧЕСКИЕ ФИГУРЫ --------------\n" << endl;
+		cout << "[ ] Выбирите пунтк\n";
 		cout << "[1] Линия\n";
-		cout << "Выберите фигуру: ";
-		cin >> a;
-
-		switch (a) {
-		case 1:
+		cout << "[2] Квадрат\n";
+		cout << ">> ";
+		cin >> menu;
+		if (menu == 1) {
 			system("cls");
-			cout << "Фигура 'Линия'\n\n";
-			cout << "[1]Горизонтальная\n";
-			cout << "[2]Вертикальная\n\n";
-			cout << "Выберите тип: \n";
-			cin >> b;
-			switch (b) {
-			case 1:
+			cout << "-------------- ПАРАМЕТРЫ ЛИНИИ --------------\n\n";
+			cout << "[1] Горизонтальная\n";
+			cout << "[2] Вертикальная\n";
+			cout << ">> ";
+			cin >> menu_2;
+			if (menu_2 == 1) {
 				system("cls");
-				cout << "Длина линии: ";
-				cin >> c;
-				cout << "Симвл линии: ";
-				cin >> v;
+				cout << "-------------- ПАРАМЕТРЫ ЛИНИИ --------------\n\n";
+				cout << "Длина: ";
+				cin >> dlina_linii;
+				cout << "Текстура линии: ";
+				cin >> textura;
 
 				system("cls");
-				while (i < c) {
-					cout << v;
+				while (i < dlina_linii) {
+					cout << textura << " ";
 					i++;
 				}
 				break;
-			case 2:
-				system("cls");
-				cout << "Длина линии: ";
-				cin >> c;
-				cout << "Симвл линии: ";
-				cin >> v;
 				
+				}
+			else if (menu_2 == 2) {
 				system("cls");
-				while (i < c) {
-					cout << v << endl;
+				cout << "-------------- ПАРАМЕТРЫ ЛИНИИ --------------\n\n";
+				cout << "Длина: ";
+				cin >> dlina_linii;
+				cout << "Текстура линии: ";
+				cin >> textura;
+
+				system("cls");
+				while (i < dlina_linii) {
+					cout << textura << endl;
 					i++;
 				}
 				break;
-			default:
-				cout << "Такого пункта нет в меню\n\n";
+				
+				}
+			
+			}			
+		else if (menu == 2) {
+			cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n";
+			cout << "[1] Заполненый\n";
+			cout << "[2] Пустой\n";
+			cout << ">> ";
+			cin >> parametr;
+			if (parametr == 1) {
+				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n";
+				cout << "Длина квадрата:";
+				cin >> dlina_kvadrata;
+				cout << "Шрина квадрата:";
 			}
-			break;
-		default:
-			cout << "Такого пункта нет в меню\n\n";
+			else if (parametr == 2) {
+
+			}
+			else {
+				cout << "ПОШЁЛ НАХУЙ";
+			}
 		}
-		break;
+		else {
+			cout << "ИДИ НАЗУЙ";
+			cin.ignore();
+			cin.get();
+		}
 	}
-	return 0;
 }
