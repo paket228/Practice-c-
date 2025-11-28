@@ -13,6 +13,7 @@ int main() {
 	int dlina_kvadrata;
 	int shirina_kvadrata;
 	int parametr;
+
 	//Меню
 	while (true) {
 		system("cls");
@@ -43,8 +44,8 @@ int main() {
 					i++;
 				}
 				break;
-				
-				}
+
+			}
 			else if (menu_2 == 2) {
 				system("cls");
 				cout << "-------------- ПАРАМЕТРЫ ЛИНИИ --------------\n\n";
@@ -59,44 +60,54 @@ int main() {
 					i++;
 				}
 				break;
-				
-				}
-			
-			}	
+
+			}
+
+		}
 		else if (menu == 2) {
 			system("cls");
-			cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n";
+			cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
 			cout << "[1] Заполненый\n";
 			cout << "[2] Пустой\n";
 			cout << ">> ";
 			cin >> parametr;
 			if (parametr == 1) {
-				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n";
-				cout << "Длина квадрата:";
-				cin >> dlina_kvadrata;
-				cout << "Текстура квадрата:";
-				cin >> textura;			 
 				system("cls");
-				while (dlina_kvadrata) {
-					while (i < dlina_kvadrata) {
-					cout << textura;
-					i++;
+				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
+				cout << "Длина квадрата: ";
+				cin >> dlina_kvadrata;
+				//cout << "Ширина квадрта: ";
+				//cin >> shirina_kvadrata;
+				cout << "Текстура квадрата: ";
+				cin >> textura;
+				system("cls");
+				if (parametr == 1) {
+					for (int i = 0; i < dlina_kvadrata; i++) {
+						for (int j = 0; j < dlina_kvadrata; j++) {
+							cout << textura;
+							if (j < dlina_kvadrata - 1) {
+								cout << " ";
+							}
+						}
+						cout << endl;
+						
 					}
+				int o;
+				cin >> o;
+
 				}
-				
-				break;
-			}
-			else if (parametr == 2) {
-				cout << "NO";
+				else if (parametr == 2) {
+					cout << "NO";
+				}
+				else {
+					cout << "ПОШЁЛ НАЗАД";
+				}
 			}
 			else {
-				cout << "ПОШЁЛ НАХУЙ";
+				cout << "ИДИ НАЗАД";
+				cin.ignore();
+				cin.get();
 			}
-		}
-		else {
-			cout << "ИДИ НАЗУЙ";
-			cin.ignore();
-			cin.get();
 		}
 	}
 }
