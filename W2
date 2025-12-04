@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int a;
+	cout << "[ ] Введите число: ";
+	cin >> a;
+    cout << "\nОтсчет:\n";
+
+    // Вариант 2: цикл while
+    while (a>= 1) {
+        cout << "Отсчет: " << a << endl;
+        a--;
+    }
+
+    cout << "\n[ + ] Старт!\n";
+
+    return 0;
+
+}
