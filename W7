@@ -1,0 +1,28 @@
+#include <iostream>
+#include <windows.h> // для Sleep()
+using namespace std;
+int main() {
+	setlocale(0, "");
+	string pasword = "12345";
+	int a = 1;
+	while (true) {
+		cout << "\nВвидите пароль: ";
+		cin >> pasword;
+		if (pasword == "12345") {
+			cout << "\nДОБРО ПОЖАЛОВАТЬ\n";
+			break;
+		}
+		else if (pasword == "I`mgay") {
+			system("cls");
+			for (int i = 0; i < 101; i++) {
+				cout << "\nПревращием в натура, не двигайся " << i << " %\n";
+				Sleep(100);
+				
+			}
+			cout << "\nПОЗДРАВЛЯЕМ ВЫ НАТУРАЛ!\n";
+		}
+		else {
+			"\nНЕВЕРНЫЙ ПАРОЛЬ\n";
+		}
+	}
+}
