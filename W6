@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main() {
+    setlocale(0, ""); 
+    int number;
+    int a = 0;
+    int sum = 0;
+    cout << "[ ] Введите число: ";
+    cin >> number;
+    while (number !=0) {
+        sum += number;
+        a++;
+        cout << "[ ] Введите число: ";
+        cin >> number;
+    }
+    int n;
+    n = sum / a;
+    cout << "[ ] Среднее арифметическое: " << n << endl;
+}
