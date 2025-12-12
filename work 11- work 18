@@ -2,7 +2,6 @@
 using namespace std;
 int main() {
 	setlocale(0, "");
-	
 	// Переменые 1
 	int i = 0;
 	int menu;
@@ -28,6 +27,7 @@ int main() {
 		cout << "[5] Решетка\n";
 		cout << "[6] Крестик\n";
 		cout << "[7] Плюс\n";
+		cout << "[8] Ромб\n";
 		cout << ">> ";
 		cin >> menu;
 		//линия
@@ -258,8 +258,20 @@ int main() {
 			cin.ignore();
 			cin.get();
 		}
+		//ромб
+		else if (menu == 8) {
+			system("cls");
+			cout << "-------------- ПАРАМЕТРЫ РОМБА --------------\n";
+			cout << "[ ] Размер";
+			cin >> size;
+			cout << "[ ] Текстура";
+			cin >> textura;
+			system("cls");
+			for (int i = 0; i <= size; i++) {
+				for (int j = 0; j <= size; j++) {
+
+				}
+			}
+		}
 	}
-	
 }
-
-
