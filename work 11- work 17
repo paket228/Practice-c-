@@ -2,6 +2,7 @@
 using namespace std;
 int main() {
 	setlocale(0, "");
+	
 	// Переменые 1
 	int i = 0;
 	int menu;
@@ -26,6 +27,7 @@ int main() {
 		cout << "[4] Треугольник\n";
 		cout << "[5] Решетка\n";
 		cout << "[6] Крестик\n";
+		cout << "[7] Плюс\n";
 		cout << ">> ";
 		cin >> menu;
 		if (menu == 1) {
@@ -81,8 +83,6 @@ int main() {
 				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
 				cout << "[ ] Длина квадрата: ";
 				cin >> dlina_kvadrata;
-				//cout << "Ширина квадрта: ";
-				//cin >> shirina_kvadrata;
 				cout << "[ ] Текстура квадрата: ";
 				cin >> textura;
 				system("cls");
@@ -227,5 +227,32 @@ int main() {
 			cin.ignore();
 			cin.get();
 		}
+		else if (menu == 7) {
+			system("cls");
+			cout << "-------------- ПАРАМЕТРЫ ПЛЮСА --------------\n";
+			cout << "[ ] Размер: ";
+			cin >> size;
+			cout << "[ ] Текстура: ";
+			cin >> textura;
+			system("cls");
+
+			int center = size / 2;
+			for (int i = 0; i < size; ++i) {
+				for (int j = 0; j < size; ++j) {
+					if (  j == center || i == center) {
+						cout << " " << textura << " ";
+					}
+					else {
+						cout << " . ";
+					}
+				}
+				cout << endl;
+			}
+			cin.ignore();
+			cin.get();
+		}
 	}
+	
 }
+
+
