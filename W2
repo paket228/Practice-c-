@@ -6,8 +6,6 @@ int main() {
 	cout << "[ ] Введите число: ";
 	cin >> a;
     cout << "\nОтсчет:\n";
-
-    // Вариант 2: цикл while
     while (a>= 1) {
         cout << "Отсчет: " << a << endl;
         a--;
