@@ -1,0 +1,129 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int menu;
+	cout << "[1] W1\n";
+	cout << "[2] W2\n";
+	cout << "[3] W3\n";
+	cout << "[4] W4\n";
+	cout << "[5] W5\n";
+	cout << "[6] W6\n";
+	cout << "[7] W7\n";
+	cout << ">> ";
+	cin >> menu;
+	if (menu == 1) {
+		system("cls");
+		int a;
+		int sum = 0;
+		cout << "-------- СУММАТОР 3000 --------\n";
+		cout << "[ + ] Введите: ";
+		cin >> a;
+
+		while (a != 0) {
+			sum += a;
+			cout << "[ + ] Введите: ";
+			cin >> a;
+		}
+
+		cout << "[ + ] Сумма: " << sum << endl;
+	}
+	else if (menu == 2) {
+		system("cls");
+		int a;
+		cout << "[ ] Введите число: ";
+		cin >> a;
+		cout << "\n[ ] Отсчет:\n";
+		while (a >= 1) {
+			cout << "[ ] Отсчет " << a << endl;
+			a--;
+		}
+
+		cout << "\n[ ] Старт!\n";
+
+	}
+	else if (menu == 3) {
+		system("cls");
+		int number;
+		int a = 0;
+		int sum = 0;
+		cout << "[ ] Введите число: ";
+		cin >> number;
+		while (number != 0) {
+			sum += number;
+			a++;
+			cout << "[ ] Введите число: ";
+			cin >> number;
+
+		}
+		cout << "[ ] Сумма: " << sum << endl;
+		cout << "[ ] Кол-во числе: " << a << endl;
+	}
+	else if (menu == 4) {
+		system("cls");
+		int number;
+		cout << "[ ] Введите число: ";
+		cin >> number;
+		int count = 0;
+		int temp = number;
+		while (temp != 0) {
+			temp /= 10;
+			count++;
+		}
+		cout << "[ ] Количество цифр: " << count << endl;
+	}
+	else if (menu == 5) {
+		system("cls");
+		double a;
+		int i = 1;
+		cout << "[ ] Введите число: ";
+		cin >> a;
+		while (i < 11) {
+			cout << a << " * " << i << " = " << a * i << endl;
+			i++;
+		}
+	}
+	else if (menu == 6) {
+		system("cls");
+		int number;
+		int a = 0;
+		int sum = 0;
+		cout << "[ ] Введите число: ";
+		cin >> number;
+		while (number != 0) {
+			sum += number;
+			a++;
+			cout << "[ ] Введите число: ";
+			cin >> number;
+		}
+		int n;
+		n = sum / a;
+		cout << "[ ] Среднее арифметическое: " << n << endl;
+	}
+	else if (menu == 7) {
+		system("cls");
+		string pasword = "12345";
+		int a = 1;
+		while (true) {
+			cout << "\nВвидите пароль: ";
+			cin >> pasword;
+			if (pasword == "12345") {
+				cout << "\nДОБРО ПОЖАЛОВАТЬ\n";
+				break;
+			}
+			else if (pasword == "I`mgay") {
+				system("cls");
+				for (int i = 0; i < 101; i++) {
+					cout << "\nПревращием в натура, не двигайся " << i << " %\n";
+					
+
+				}
+				cout << "\nПОЗДРАВЛЯЕМ ВЫ НАТУРАЛ!\n";
+			}
+			else {
+				"\nНЕВЕРНЫЙ ПАРОЛЬ\n";
+			}
+		}
+	}
+return 0;
+}
