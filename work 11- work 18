@@ -89,10 +89,10 @@ int main() {
 				cin >> textura;
 				system("cls");
 				if (parametr == 1) {
-					for (int i = 0; i < dlina_kvadrata; i++) {
-						for (int j = 0; j < dlina_kvadrata; j++) {
+					for (int y = 0; y < dlina_kvadrata; y++) {
+						for (int x = 0; x < dlina_kvadrata; x++) {
 							cout << textura;
-							if (j < dlina_kvadrata - 1) {
+							if (x < dlina_kvadrata - 1) {
 								cout << " ";
 							}
 						}
@@ -112,9 +112,9 @@ int main() {
 				cout << "[ ] Текстура квадрата: ";
 				cin >> textura;
 				system("cls");
-				for (int i = 0; i < dlina_kvadrata; i++) {
-					for (int j = 0; j < dlina_kvadrata; j++) {
-						if (i == 0 || i == dlina_kvadrata - 1 || j == 0 || j == dlina_kvadrata - 1) {
+				for (int y = 0; y < dlina_kvadrata; y++) {
+					for (int x = 0; x < dlina_kvadrata; x++) {
+						if (y == 0 || y == dlina_kvadrata - 1 || y == 0 || y == dlina_kvadrata - 1) {
 							cout << textura << " ";
 						}
 						else {
@@ -123,9 +123,9 @@ int main() {
 					}
 					cout << endl;
 				}
-			}
 			cin.ignore();
 			cin.get();
+			}
 		}
 		//прямогульник
 		else if (menu == 3) {
@@ -143,16 +143,39 @@ int main() {
 				cin >> height;
 				cout << "[ ] Текстура: ";
 				cin >> textura;
-
 				cout << endl;
 				system("cls");
-				for (int i = 0; i < height; i++) {
-					for (int j = 0; j < width; j++) {
-						if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+				for (int y = 0; y < height; y++) {
+					for (int x = 0; x < width; x++) {
+						if (y == 0 || y == height - 1 || x == 0 || x == width - 1) {
 							cout << textura << " ";
 						}
 						else {
 							cout << ". ";
+						}
+					}
+					cout << endl;
+				}
+				cin.ignore();
+				cin.get();
+			}
+			else if (parametr == 2) {
+				system("cls");
+				cout << "[ ] Ширина: ";
+				cin >> width;
+				cout << "[ ] Высота: ";
+				cin >> height;
+				cout << "[ ] Текстура: ";
+				cin >> textura;
+				cout << endl;
+				system("cls");
+				for (int y = 0; y < height; y++) {
+					for (int x = 0; x < width; x++) {
+						if (y == 0 || y == height - 1 || x == 0 || x == width - 1) {
+							cout << textura << " ";
+						}
+						else {
+							cout << "  ";
 						}
 					}
 					cout << endl;
@@ -165,26 +188,56 @@ int main() {
 		else if (menu == 4) {
 			system("cls");
 			cout << "-------------- ПРАМЕТРЫ ТРЕУГОЛЬНИКА --------------\n";
-			cout << "[ ] Размер: ";
-			cin >> height;
-			cout << "[ ] Текстура: ";
-			cin >> textura;
-			system("cls");
-			for (int i = 1; i <= height; i++) {
-				int spaces_before = height - i;
-				int chars = 2 * i - 1;
-				for (int j = 0; j < height * 2 - 1; j++) {
-					if (j < spaces_before || j >= spaces_before + chars) {
-						cout << ". ";
+			cout << "[1] Заполненый\n";
+			cout << "[2] Пустой\n";
+			cout << ">> ";
+			cin >> parametr;
+			if (parametr == 1) {
+				system("cls");
+				cout << "[ ] Размер: ";
+				cin >> height;
+				cout << "[ ] Текстура: ";
+				cin >> textura;
+				system("cls");
+				for (int y = 1; y <= height; y++) {
+					int spaces_before = height - y;
+					int chars = 2 * y - 1;
+					for (int x = 0; x < height * 2 - 1; x++) {
+						if (x < spaces_before || x >= spaces_before + chars) {
+							cout << ". ";
+						}
+						else {
+							cout << textura << " ";
+						}
 					}
-					else {
-						cout << textura << " ";
-					}
+					cout << endl;
 				}
-				cout << endl;
+				cin.ignore();
+				cin.get();
 			}
+			else if (parametr == 2) {
+				system("cls");
+				cout << "[ ] Размер: ";
+				cin >> height;
+				cout << "[ ] Текстура: ";
+				cin >> textura;
+				system("cls");
+				for (int y = 1; y <= height; y++) {
+					int spaces_before = height - y;
+					int chars = 2 * y - 1;
+					for (int x = 0; x < height * 2 - 1; x++) {
+						if (x < spaces_before || x >= spaces_before + chars) {
+							cout << ". ";
+						}
+						else {
+							cout << textura << " ";
+						}
+					}
+					cout << endl;
+				}
 			cin.ignore();
 			cin.get();
+			}
 		}
 		//решётка
 		else if (menu == 5) {
@@ -195,9 +248,9 @@ int main() {
 			cout << "[ ] Текстура: ";
 			cin >> textura;
 			system("cls");
-			for (int i = 0; i < size; i++) {
-				for (int j = 0; j < size; j++) {
-					if ((i + j) % 2 == 0) {
+			for (int y = 0; y < size; y++) {
+				for (int x = 0; x < size; x++) {
+					if ((y + x) % 2 == 0) {
 						cout << ". ";
 					}
 					else {
@@ -218,10 +271,10 @@ int main() {
 			cout << "[ ] Текстура: ";
 			cin >> textura;
 			system("cls");
-			for (int i = 0; i < size; i++) {
-				for (int j = 0; j < size; j++) {
+			for (int y = 0; y < size; y++) {
+				for (int x = 0; x < size; x++) {
 
-					if (i == j || i + j == size - 1) {
+					if (y == x || y + x == size - 1) {
 						cout << textura << " ";
 					}
 					else {
@@ -244,9 +297,9 @@ int main() {
 			system("cls");
 
 			int center = size / 2;
-			for (int i = 0; i < size; ++i) {
-				for (int j = 0; j < size; ++j) {
-					if (  j == center || i == center) {
+			for (int y = 0; y < size; ++y) {
+				for (int x = 0; x < size; ++x) {
+					if (x == center || y == center) {
 						cout << " " << textura << " ";
 					}
 					else {
@@ -267,8 +320,8 @@ int main() {
 			cout << "[ ] Текстура";
 			cin >> textura;
 			system("cls");
-			for (int i = 0; i <= size; i++) {
-				for (int j = 0; j <= size; j++) {
+			for (int y = 0; y <= size; y++) {
+				for (int x = 0; x <= size; x++) {
 
 				}
 			}
