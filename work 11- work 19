@@ -78,6 +78,7 @@ int main() {
 			cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
 			cout << "[1] Заполненый\n";
 			cout << "[2] Пустой\n";
+			cout << "[3] В четверти поля\n";
 			cout << ">> ";
 			cin >> parametr;
 			if (parametr == 1) {
@@ -114,7 +115,7 @@ int main() {
 				system("cls");
 				for (int y = 0; y < dlina_kvadrata; y++) {
 					for (int x = 0; x < dlina_kvadrata; x++) {
-						if (y == 0 || y == dlina_kvadrata - 1 || y == 0 || y == dlina_kvadrata - 1) {
+						if (y == 0 || y == dlina_kvadrata - 1 || x == 0 || x == dlina_kvadrata - 1) {
 							cout << textura << " ";
 						}
 						else {
@@ -123,8 +124,98 @@ int main() {
 					}
 					cout << endl;
 				}
-			cin.ignore();
-			cin.get();
+				cin.ignore();
+				cin.get();
+			}
+			else if (parametr == 3) {
+				system("cls");
+				cout << "-------------- НАСТРОЙКА --------------\n\n";
+				cout << "[ ] Размер поля\n";
+				int razmer_pola;
+				cout << ">> ";
+				cin >> razmer_pola;
+				int razmer_cuba = razmer_pola / 2;
+				system("cls");
+				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
+				char textura1;
+				char textura2;
+				char textura3;
+				char textura4;
+				cout << "[ ] Текстура 1 квадрата: ";
+				cin >> textura1;
+				cout << "[ ] Текстура 2 квадрата: ";
+				cin >> textura2;
+				cout << "[ ] Текстура 3 квадрата: ";
+				cin >> textura3;
+				cout << "[ ] Текстура 4 квадрата: ";
+				cin >> textura4;
+				system("cls");
+				//лево верх
+				for (int y = 0; y < razmer_pola; y++) {
+					for (int x = 0; x < razmer_pola; x++) {
+						// право низ
+						if (y <= razmer_cuba - 1  && x <= razmer_cuba) {
+							cout << "\x1b[91m" << textura1 << "\x1b[0m" << " ";
+						}
+						// лево низ
+						else if (y >= razmer_cuba && x <= razmer_cuba) {
+							cout << "\x1b[92m" << textura2 << "\x1b[0m" << " ";
+						}
+						// право верх
+						else if (y <= razmer_cuba - 1  && x >= razmer_cuba + 1) {
+							cout << "\x1b[96m" << textura3 << "\x1b[0m" << " ";
+						}
+						// лево верх
+						else if (y >= razmer_cuba - 1 && x >= razmer_cuba - 1) {
+							cout << "\x1b[95m" << textura4 << "\x1b[0m" << " ";
+						}
+						else {
+							cout << ". ";
+						}
+					}
+					cout << endl;
+				}
+				/*
+				//право верх
+				for (int y = 0; y < razmer_pola; y++) {
+					for (int x = 0; x < razmer_pola; x++) {
+						if (y <= razmer_cuba && x >= razmer_cuba) {
+							cout << "\x1b[92m" << textura2 << "\x1b[0m" << " ";
+						}
+						else {
+							cout << ". ";
+						}
+					}
+					cout << endl;
+				}
+				//лево низ
+				for (int y = 0; y < razmer_pola; y++) {
+					for (int x = 0; x < razmer_pola; x++) {
+						if (y >= razmer_cuba && x <= razmer_cuba) {
+							cout << "\x1b[93m" << textura3 << "\x1b[0m" << " ";
+						}
+						else {
+							cout << ". ";
+						}
+					}
+					cout << endl;
+				}
+				//право низ
+				for (int y = 0; y < razmer_pola; y++) {
+					for (int x = 0; x < razmer_pola; x++) {
+						if (y >= razmer_cuba && x >= razmer_cuba) {
+							cout << "\x1b[94m" << textura4 << "\x1b[0m" << " ";
+						}
+						else {
+							cout << ". ";
+						}
+					}
+					cout << endl;
+				}
+				*/
+				cin.ignore();
+				cin.get();
+
 			}
 		}
 		//прямогульник
@@ -235,8 +326,8 @@ int main() {
 					}
 					cout << endl;
 				}
-			cin.ignore();
-			cin.get();
+				cin.ignore();
+				cin.get();
 			}
 		}
 		//решётка
