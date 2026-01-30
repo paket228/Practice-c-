@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	const int q = 10;
+	int a[q] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	long b[q] = { 634716, 46247, 63518, 417411, 83582, 7483, 9887, 68621 };
+
+	short c[q] = { 4251, 14512, 7615, 1245, 12351, 51234 };
+
+	float d[q] = {213.51, 1251.612, 623.622, 618.453, 724.613};
+
+	int i = 1;
+	
+
+	cout << "Массив INT: \n";
+	if (i < 11) {
+		int i = 1;
+		for (int g = 0; g < q; g++) {
+
+			cout << "[ ] a[" << i << "] | значение: " << a[g] << endl;
+			i++;
+		}
+		int i2 = 1;
+		cout << "Массив LONG: \n ";
+		for (int g = 0; g < q; g++) {
+			
+			cout << "[ ] b[" << i2 << "] | значение: " << b[g] << endl;
+			i2++;
+		}
+		cout << "Массив ShORT: \n ";
+		
+		int i3 = 1;
+		for (int g = 0; g < q; g++) {
+
+			cout << "[ ] c[" << i3 << "] | значение: " << c[g] << endl;
+			i3++;
+		}
+		cout << "Массив FLOAT: \n ";
+		int i4 = 1;
+		for (int g = 0; g < q; g++) {
+
+			cout << "[ ] d[" << i4 << "] | значение: " << d[g] << endl;
+			i4++;
+		}
+	}
+}
+	
