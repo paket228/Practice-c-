@@ -9,7 +9,6 @@ int main() {
 	char textura;
 	// Переменые 2
 	int dlina_kvadrata;
-	int shirina_kvadrata;
 	int parametr;
 	// Переменые 3
 	int width, height;
@@ -137,14 +136,17 @@ int main() {
 				int razmer_cuba = razmer_pola / 2;
 				system("cls");
 				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
+				/*
 				char textura1;
 				char textura2;
 				char textura3;
 				char textura4;
+				*/
 				int n1 = 1;
 				int n2 = 2;
 				int n3 = 3;
 				int n4 = 4;
+				/*
 				cout << "[ ] Текстура 1 квадрата: \n >> ";
 				cin >> textura1;
 				cout << "[ ] Текстура 2 квадрата: \n >> ";
@@ -153,6 +155,7 @@ int main() {
 				cin >> textura3;
 				cout << "[ ] Текстура 4 квадрата: \n >> ";
 				cin >> textura4;
+				*/
 				system("cls");
 				cout << "-------------- ПАРАМЕТРЫ КВАДРАТА --------------\n\n";
 				cout << "[ ] Цвет текстурки 1 (цифры от 0 до 9): \n >> ";
@@ -164,32 +167,32 @@ int main() {
 				cout << "[ ] Цвет текстурки 4 (цифры от 0 до 9): \n >> ";
 				cin >> n4;
 				system("cls");
-				
+
 				for (int y = 0; y < razmer_pola; y++) {
 					for (int x = 0; x < razmer_pola; x++) {
-						// право низ
-						if (y <= razmer_cuba - 1  && x <= razmer_cuba) {
-							cout << "\x1b[9" << n1 << "m" << textura1 << "\x1b[0m" << " ";
+						// Лево верх
+						if (y <= razmer_cuba - 1 && x <= razmer_cuba) {
+							cout << "\x1b[9" << n1 << "m" << "&" << "\x1b[0m" << " ";
 						}
-						// лево низ
-						else if (y >= razmer_cuba && x <= razmer_cuba) {
-							cout << "\x1b[9"<< n2 << "m" << textura2 << "\x1b[0m" << " ";
+						// Лево низ
+						else if (y >= razmer_cuba - 1 && x <= razmer_cuba) {
+							cout << "\x1b[9" << n2 << "m" << "#" << "\x1b[0m" << " ";
 						}
-						// право верх
-						else if (y <= razmer_cuba - 1  && x >= razmer_cuba + 1) {
-							cout << "\x1b[9" << n3 << "m" << textura3 << "\x1b[0m" << " ";
+						// Право верх
+						else if (y <= razmer_cuba - 1 && x >= razmer_cuba) {
+							cout << "\x1b[9" << n3 << "m" << "@" << "\x1b[0m" << " ";
 						}
-						// лево верх
-						else if (y >= razmer_cuba - 1 && x >= razmer_cuba - 1) {
-							cout << "\x1b[9" << n4 << "m" << textura4 << "\x1b[0m" << " ";
+						// Право низ
+						else if (y >= razmer_cuba && x >= razmer_cuba) {
+							cout << "\x1b[9" << n4 << "m" << "$" << "\x1b[0m" << " ";
 						}
 						else {
 						}
 					}
-							cout << ". ";
+					cout << ". ";
 					cout << endl;
 				}
-				
+
 				cin.ignore();
 				cin.get();
 
@@ -390,7 +393,7 @@ int main() {
 			system("cls");
 			for (int y = 1; y <= size; y++) {
 				for (int x = 1; x <= size; x++) {
-					if (x == size / 2 - y + 2 || x == size / 2 + y || y > size/2 and x == y - size/2 || x > size/2) {
+					if (x == size / 2 - y + 2 || x == size / 2 + y || y > size / 2 and x == y - size / 2 || x > size / 2) {
 						cout << textura << " ";
 					}
 					else {
