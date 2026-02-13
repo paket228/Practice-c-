@@ -1,0 +1,136 @@
+#include <iostream>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	int a;
+	int pin3;
+	int pin4;
+	int pin5;
+	const int q = 7;
+	int num[q] = { 123, 63, 14, 6, 2, 6, 9 };
+
+	while (true) {
+		system("cls");
+		int i = 0;
+		for (int g = 0; g < q; g++) {
+			cout << "Значение в ячейке [" << i << "] : " << num[g] << endl;
+			i++;
+		}
+		cout << endl;
+
+		short nastr = 1;
+		cout << "\nНастройки массива\n";
+		cout << "[1] Сортировка по возрастоню\n";
+		cout << "[2] Сортировка по убыванию\n";
+		cout << "[3] Перемножить массив\n";
+		cout << "[4] Сложить массив\n";
+		cout << "[5] Разделить массив\n";
+		cout << "[6] Обнулить массив (не работает)\n";
+		cout << "\n[9] Задать новые значения массиву\n";
+		cout << ">> ";
+		cin >> nastr;
+
+		if (nastr == 1) {
+			system("cls");
+			for (int g = 0; g < q; g++) {
+				for (int j = 0; j < q - 1 - g; j++) {
+					if (num[j] > num[j + 1]) {
+						swap(num[j], num[j + 1]);
+					}
+				}
+
+			}
+			for (int g = 0; g < q; g++) {
+				cout << num[g] << " \n";
+			}
+			cin.ignore();
+			cin.get();
+
+		}
+		else if (nastr == 2) {
+			system("cls");
+			for (int g = 0; g < q; g++) {
+				for (int j = 0; j < q - 1 - g; j++) {
+					if (num[j] < num[j + 1]) {
+						swap(num[j], num[j + 1]);
+					}
+				}
+
+			}
+			for (int g = 0; g < q; g++) {
+				cout << num[g] << " \n";
+			}
+			cin.ignore();
+			cin.get();
+
+		}
+		else if (nastr == 3) {
+			system("cls");
+			cout << "Введите значение для перемножение массива (только целочисленые)\n";
+			cout << ">> ";
+			cin >> pin3;
+			for (int g = 0; g < q; g++) {
+				cout << "Значение в ячейке [" << i << "]: " << num[g] << " * " << pin3 << " = " << num[g] * pin3 << endl;
+				i++;
+			}
+			cout << endl;
+			cin.ignore();
+			cin.get();
+
+		}
+		else if (nastr == 4) {
+			system("cls");
+			cout << "Введите значение для сложения массива (только целочисленые)\n";
+			cout << ">> ";
+			cin >> pin4;
+			for (int g = 0; g < q; g++) {
+				cout << "Значение в ячейке [" << i << "]: " << num[g] << " + " << pin4 << " = " << num[g] + pin4 << endl;
+				i++;
+			}
+			cout << endl;
+			cin.ignore();
+			cin.get();
+
+		}
+		else if (nastr == 5) {
+			system("cls");
+			cout << "Введите значение для деления массива (только целочисленые)\n";
+			cout << ">> ";
+			cin >> pin5;
+			for (int g = 0; g < q; g++) {
+				cout << "Значение в ячейке [" << i << "]: " << num[g] << " / " << pin5 << " = " << num[g] / pin5 << endl;
+				i++;
+			}
+			cout << endl;
+			cin.ignore();
+			cin.get();
+
+		}
+		// Обнуление массива не работает
+		else if (nastr == 6) {
+
+			int num[q] = { 0, 0, 0, 0, 0, 0, 0 };
+			cin.ignore();
+			cin.get();
+		}
+		else if (nastr == 9) {
+			int i{};        // счетчик введенных чисел
+			cout << "Введите число" << endl;
+			while (i < q)
+			{
+				cin >> num[i];    // вводим число
+				i++;
+			}
+			cout << endl;
+			// выводим массив
+			for (i = 0; i < q; ++i)
+			{
+				cout << num[i] << "\t";
+			}
+			cout << endl;
+			cin.ignore();
+			cin.get();
+		}
+
+	}
+}
