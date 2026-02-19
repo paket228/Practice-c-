@@ -27,6 +27,7 @@ int main() {
 		cout << "[6] Крестик\n";
 		cout << "[7] Плюс\n";
 		cout << "[8] Ромб\n";
+		cout << "[9] Змейка\n";
 		cout << ">> ";
 		cin >> menu;
 		//линия
@@ -391,14 +392,53 @@ int main() {
 			cout << "[ ] Текстура: \n >> ";
 			cin >> textura;
 			system("cls");
-			for (int y = 1; y <= size; y++) {
-				for (int x = 1; x <= size; x++) {
-					if (x == size / 2 - y + 2 || x == size / 2 + y || y > size / 2 and x == y - size / 2 || x > size / 2) {
+			for (int y = 1; y < size; y++) {
+				for (int x = 1; x < size; x++) {
+					if (x == size / 2 + y or x == size / 2 - y or x == size / 2 - size + y + 1 or x == size / 2 + size - y - 1) {
 						cout << textura << " ";
 					}
 					else {
 						cout << ". ";
 					}
+				}
+				cout << endl;
+			}
+			cin.ignore();
+			cin.get();
+		}
+		//змейка
+		else if (menu == 9) {
+			bool a = 1;
+			system("cls");
+			cout << "-------------- ПАРАМЕТРЫ ЗМЕЙКИ --------------\n\n";
+			cout << "[ ] Размер: ";
+			cin >> size;
+			cout << "[ ] Текстура: ";
+			cin >> textura;
+			system("cls");
+			for (int y = 1; y <= size; y++) {
+				for (int x = 1; x <= size; x++) {
+					if (y % 2 != 0) {
+						cout << textura << " ";
+
+					}
+					else if (a == 1 && x == size) {
+						cout << textura << " ";
+						
+					}
+					else if (a == 0 && x == 1) {
+						cout << textura << " ";
+					}
+					else {
+						cout << ". ";
+					}
+
+				}
+				if (a == 1 && y % 2 == 0) {
+					a = 0;
+				}
+				else if (a == 0 && y % 2 == 0) {
+					a = 1;
 				}
 				cout << endl;
 			}
