@@ -1,0 +1,25 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+	setlocale(0, "");
+	string a = "    - - - - - - - - - - - - - - - - - - - - - - -\n";
+	short chislo = 1;
+
+	for (int i = 1; i < 6; i++) {
+		cout << setw(5) << "|" << setw(10) << "Таблица: " << i << endl;
+		cout << setw(5) << a;
+		cout << setw(5) << "|" << setw(10) << "Число" << setw(5) << "|" << setw(10) << "Пример" << setw(5) << "|" << setw(10) << "Решение" << setw(5) << "|\n";
+		cout << setw(5) << a;
+		cout << setw(5) << "|" << setw(8) << chislo << setw(7) << "|" << setw(7) << chislo << "+" << chislo << setw(6) << "|" << setw(7) << chislo + chislo << setw(8) << "|\n";
+		cout << setw(5) << a;
+		cout << setw(5) << "|" << setw(8) << chislo << setw(7) << "|" << setw(7) << chislo << "-" << chislo << setw(6) << "|" << setw(7) << chislo - chislo << setw(8) << "|\n";
+		cout << setw(5) << a;
+		cout << setw(5) << "|" << setw(8) << chislo << setw(7) << "|" << setw(7) << chislo << "*" << chislo << setw(6) << "|" << setw(7) << chislo * chislo << setw(8) << "|\n";
+		cout << setw(5) << a;
+		cout << setw(5) << "|" << setw(8) << chislo << setw(7) << "|" << setw(7) << chislo << "/" << chislo << setw(6) << "|" << setw(7) << chislo / chislo << setw(8) << "|\n";
+		cout << setw(5) << a;
+		chislo++;
+		cout << endl;
+	}
+}
