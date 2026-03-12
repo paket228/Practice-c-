@@ -1,9 +1,15 @@
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 int main() {
 	setlocale(0, "");
 	int menu;
+	int menu_1;
+	short p_1 = 1, p_2 = 2, p_3 = 3, p_4 = 4, p_5 = 5, p_6 = 6, p_7 = 7, p_8 = 8, p_9 = 9;
+	short p[10] = { p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 };
+	int index;
 	while (true) {
 		system("cls");
 		cout << "[ ] Крестики нолики\n";
@@ -14,10 +20,41 @@ int main() {
 		cout << "\x1b[93m" << ">> " << "\x1b[0m";
 		cin >> menu;
 		if (menu == 1) {
+			system("cls");
+			cout << "[ ] Крестики нолики\n";
+			cout << "[1] Одиночкая игра\n";
+			cout << "[2] Для двух игроков\n";
+			cout << "[0] " << "\x1b[90m" << "Назад\n" << "\x1b[0m" << ">> ";
+			cin >> menu_1;
+			switch (menu_1) {
+			case 2:
+				system("cls");
+				cout << "[ ] Крестики нолики\n\n";
+				cout << setw(6) << p_1 << " | " << p_2 << " | " << p_3 << endl;
+				cout << setw(16) << "-----------\n";
+				cout << setw(6) << p_4 << " | " << p_5 << " | " << p_6 << endl;
+				cout << setw(16) << "-----------\n";
+				cout << setw(6) << p_7 << " | " << p_8 << " | " << p_9 << endl;
+				cout << endl << "[ ] " << "\x1b[94m" << "Игрок 1: " << "\x1b[0m";
+				cin >> index;
+
+			case 1:
+
+			case 3:
+				system("cls");
+				cout << "[ ] Крестики нолики\n";
+				cout << "[1]" << "\x1b[94m" << " Начать игру\n" << "\x1b[0m";
+				cout << "[2] Статистика\n";
+				cout << "[3] Настройки\n";
+				cout << "[0] " << "\x1b[90m" << "Выход\n" << "\x1b[0m";
+				cout << "\x1b[93m" << ">> " << "\x1b[0m";
+				cin >> menu;
+			}
+
 
 		}
 		else if (menu == 2) {
-		
+
 		}
 		else if (menu == 3) {
 
