@@ -7,9 +7,18 @@ int main() {
 	setlocale(0, "");
 	int menu;
 	int menu_1;
-	short p_1 = 1, p_2 = 2, p_3 = 3, p_4 = 4, p_5 = 5, p_6 = 6, p_7 = 7, p_8 = 8, p_9 = 9;
-	short p[10] = { p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 };
+	char p_0 = '0', p_1 = '1', p_2 = '2', p_3 = '3', p_4 = '4', p_5 = '5', p_6 = '6', p_7 = '7', p_8 = '8', p_9 = '9';
+	char p[10] = { p_0, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 };
 	int index;
+	char player1 = 'X';
+	char player2 = 'O';
+	short num_pl = 1;
+	short pl_color = 4;
+	int full_geme = 1;
+	int game = 1;
+	int menu_3;
+	string player1_name = "Игрок 1";
+	string player2_name = "Игрок 2";
 	while (true) {
 		system("cls");
 		cout << "[ ] Крестики нолики\n";
@@ -22,44 +31,78 @@ int main() {
 		if (menu == 1) {
 			system("cls");
 			cout << "[ ] Крестики нолики\n";
-			cout << "[1] Одиночкая игра\n";
+			cout << "[1] Одиночная игра\n";
 			cout << "[2] Для двух игроков\n";
 			cout << "[0] " << "\x1b[90m" << "Назад\n" << "\x1b[0m" << ">> ";
 			cin >> menu_1;
 			switch (menu_1) {
 			case 2:
-				system("cls");
-				cout << "[ ] Крестики нолики\n\n";
-				cout << setw(6) << p_1 << " | " << p_2 << " | " << p_3 << endl;
-				cout << setw(16) << "-----------\n";
-				cout << setw(6) << p_4 << " | " << p_5 << " | " << p_6 << endl;
-				cout << setw(16) << "-----------\n";
-				cout << setw(6) << p_7 << " | " << p_8 << " | " << p_9 << endl;
-				cout << endl << "[ ] " << "\x1b[94m" << "Игрок 1: " << "\x1b[0m";
-				cin >> index;
+				while (game == 1) {
+					system("cls");
+					cout << "[ ] Крестики нолики\n\n";
+					cout << setw(6) << p[1] << " | " << p[2] << " | " << p[3] << endl;
+					cout << setw(16) << "-----------\n";
+					cout << setw(6) << p[4] << " | " << p[5] << " | " << p[6] << endl;
+					cout << setw(16) << "-----------\n";
+					cout << setw(6) << p[7] << " | " << p[8] << " | " << p[9] << endl;
+					cout << endl << "[ ] " << "\x1b[9" << pl_color << "m" << "Игрок " << num_pl << ": " << "\x1b[0m";
+					cin >> index;
+					if (index > 9 && index < 1) {
+						cout << "NO";
+						cin.ignore();
+						cin.get();
+					}
+					if (num_pl == 1) {
+						p[index] = player1;
+						num_pl++;
+						pl_color--;
+						pl_color--;
+						pl_color--;
+					}
+					else if (num_pl == 2) {
 
-			case 1:
+						p[index] = player2;
+						num_pl--;
+						pl_color++;
+						pl_color++;
+						pl_color++;
+					}
+					if (p[1] && p[4] && p[7] == player1 || p[2] && p[5] && p[8] == player1 || p[3] && p[6] && p[9] == player1 || p[1] && p[2] && p[3] == player1 || p[4] && p[5] && p[6] == player1 || p[7] && p[8] && p[9] == player1 || p[1] && p[5] && p[9] == player1 || p[3] && p[5] && p[7] == player1) {
+						system("cls");
+						game = 0;
+						cout << "ПОБЕДИЛ ИГРОК 1";
+						cin.ignore();
+						cin.get();
+					}
+					else if (p[1] && p[4] && p[7] == player2 || p[2] && p[5] && p[8] == player2 || p[3] && p[6] && p[9] == player2 || p[1] && p[2] && p[3] == player2 || p[4] && p[5] && p[6] == player2 || p[7] && p[8] && p[9] == player2 || p[1] && p[5] && p[9] == player2 || p[3] && p[5] && p[7] == player2) {
+						system("cls");
+						game = 0;
+						cout << "ПОБЕДИЛ ИГРОК 2";
+						cin.ignore();
+						cin.get();
+					}
 
-			case 3:
-				system("cls");
-				cout << "[ ] Крестики нолики\n";
-				cout << "[1]" << "\x1b[94m" << " Начать игру\n" << "\x1b[0m";
-				cout << "[2] Статистика\n";
-				cout << "[3] Настройки\n";
-				cout << "[0] " << "\x1b[90m" << "Выход\n" << "\x1b[0m";
-				cout << "\x1b[93m" << ">> " << "\x1b[0m";
-				cin >> menu;
+
+
+				}
 			}
-
-
 		}
 		else if (menu == 2) {
-
+			cout << "Её пока что нету....";
 		}
 		else if (menu == 3) {
-
+			system("cls");
+			cout << "[ ] Настройки игрока\n";
+			cout << "[1] Игрок 1\n";
+			cout << "[2] Игрок 2\n>> ";
+			cin >> menu_3;
+			if (menu_3 == 1) {
+				cout << "[ ] Игрок 1\n";
+				cout << "[1] Ник " << setw(6) << ":" << player1_name;
+				cout << "[2] Фигура ";
+			}
 		}
-		else if (menu == 4) {
+		else if (menu == 0) {
 			exit(1);
 		}
 		else {
