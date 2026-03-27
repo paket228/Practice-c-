@@ -5,21 +5,28 @@
 using namespace std;
 int main() {
 	setlocale(0, "");
+	// переменные которые не должны обновляться каждую новую игру (вовремя уже запущеной проги), тк они обнавляются во время игры
 	int menu;
 	int menu_1;
-	char p_0 = '0', p_1 = '1', p_2 = '2', p_3 = '3', p_4 = '4', p_5 = '5', p_6 = '6', p_7 = '7', p_8 = '8', p_9 = '9';
-	char p[10] = { p_0, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 };
-	int index;
 	char player1 = 'X';
 	char player2 = 'O';
-	short num_pl = 1;
-	short pl_color = 4;
-	int full_geme = 1;
-	int game = 1;
-	int menu_3;
 	string player1_name = "Игрок 1";
 	string player2_name = "Игрок 2";
 	while (true) {
+		// переменные которые должны обновляться каждую новую игру (вовремя уже запущеной проги)
+		char p_0 = '0', p_1 = '1', p_2 = '2', p_3 = '3', p_4 = '4', p_5 = '5', p_6 = '6', p_7 = '7', p_8 = '8', p_9 = '9';
+		char p[10] = { p_0, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 };
+		int index;
+		short num_pl = 1;
+		string pl1_color_1 = "\x1b[94m";
+		string pl1_color_2 = "\x1b[0m";
+		string pl2_color_1 = "\x1b[91m";
+		string pl2_color_2 = "\x1b[0m";
+		int game = 1;
+		int menu_3;
+		short st_pl1;
+		short st_pl2;
+
 		system("cls");
 		cout << "[ ] Крестики нолики\n";
 		cout << "[1]" << "\x1b[94m" << " Начать игру\n" << "\x1b[0m";
@@ -67,23 +74,23 @@ int main() {
 						pl_color++;
 						pl_color++;
 					}
-					if (p[1] && p[4] && p[7] == player1 || p[2] && p[5] && p[8] == player1 || p[3] && p[6] && p[9] == player1 || p[1] && p[2] && p[3] == player1 || p[4] && p[5] && p[6] == player1 || p[7] && p[8] && p[9] == player1 || p[1] && p[5] && p[9] == player1 || p[3] && p[5] && p[7] == player1) {
+					if (p[1] == player1 && p[4] == player1 && p[7] == player1 || p[1] == player1 && p[2] == player1 && p[3] == player1 || p[1] == player1 && p[5] == player1 && p[9] == player1 || p[2] == player1 && p[5] == player1 && p[8] == player1 || p[3] == player1 && p[6] == player1 && p[9] == player1 || p[4] == player1 && p[5] == player1 && p[6] == player1 || p[7] == player1 && p[8] == player1 && p[9] == player1 || p[3] == player1 && p[5] == player1 && p[7] == player1) {
 						system("cls");
 						game = 0;
 						cout << "ПОБЕДИЛ ИГРОК 1";
 						cin.ignore();
 						cin.get();
+						continue;
 					}
-					else if (p[1] && p[4] && p[7] == player2 || p[2] && p[5] && p[8] == player2 || p[3] && p[6] && p[9] == player2 || p[1] && p[2] && p[3] == player2 || p[4] && p[5] && p[6] == player2 || p[7] && p[8] && p[9] == player2 || p[1] && p[5] && p[9] == player2 || p[3] && p[5] && p[7] == player2) {
+	
+					else if (p[1] == player2 && p[4] == player2 && p[7] == player2 || p[1] == player2 && p[2] == player2 && p[3] == player2 || p[1] == player2 && p[5] == player2 && p[9] == player2 || p[2] == player2 && p[5] == player2 && p[8] == player2 || p[3] == player2 && p[6] == player2 && p[9] == player2 || p[4] == player2 && p[5] == player2 && p[6] == player2 || p[7] == player2 && p[8] == player2 && p[9] == player2 || p[3] == player2 && p[5] == player2 && p[7] == player2) {
 						system("cls");
 						game = 0;
 						cout << "ПОБЕДИЛ ИГРОК 2";
 						cin.ignore();
 						cin.get();
+						continue;
 					}
-
-
-
 				}
 			}
 		}
@@ -92,14 +99,25 @@ int main() {
 		}
 		else if (menu == 3) {
 			system("cls");
-			cout << "[ ] Настройки игрока\n";
-			cout << "[1] Игрок 1\n";
-			cout << "[2] Игрок 2\n>> ";
-			cin >> menu_3;
-			if (menu_3 == 1) {
-				cout << "[ ] Игрок 1\n";
-				cout << "[1] Ник " << setw(6) << ":" << player1_name;
-				cout << "[2] Фигура ";
+			cout << "[ ] Игрок 1\n";
+			cout << "[1] Ник " << setw(6) << "| " << player1_name;
+			cout << "\n[2] Фигура " << setw(3) << "| " << player1;
+			cout << "\n[0] Выход";
+			cout << "\n>> ";
+			cin >> st_pl1;
+			if (st_pl1 == 1) {
+				string edit_plyaer1_name;
+				edit_plyaer1_name = player1_name;
+				cin >> edit_plyaer1_name;
+			
+			}
+			else if (st_pl1 == 2) {
+				char edit_player1;
+				cin >> edit_player1;
+				player1 = edit_player1;
+			}
+			else if (st_pl1 == 0) {
+				continue;
 			}
 		}
 		else if (menu == 0) {
