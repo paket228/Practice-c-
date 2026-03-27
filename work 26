@@ -52,7 +52,7 @@ int main() {
 					cout << setw(6) << p[4] << " | " << p[5] << " | " << p[6] << endl;
 					cout << setw(16) << "-----------\n";
 					cout << setw(6) << p[7] << " | " << p[8] << " | " << p[9] << endl;
-					cout << endl << "[ ] " << "\x1b[9" << pl_color << "m" << "Игрок " << num_pl << ": " << "\x1b[0m";
+					cout << endl << "[ ] " << pl1_color_1 << "Игрок " << num_pl << ": " << pl1_color_2;
 					cin >> index;
 					if (index > 9 && index < 1) {
 						cout << "NO";
