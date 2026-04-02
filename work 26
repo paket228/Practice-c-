@@ -2,9 +2,11 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+#include <Windows.h>
 using namespace std;
 int main() {
-	setlocale(0, "");
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
 	// переменные которые не должны обновляться каждую новую игру (вовремя уже запущеной проги), тк они обнавляются во время игры
 	int menu;
 	int menu_1;
@@ -62,17 +64,11 @@ int main() {
 					if (num_pl == 1) {
 						p[index] = player1;
 						num_pl++;
-						pl_color--;
-						pl_color--;
-						pl_color--;
 					}
 					else if (num_pl == 2) {
 
 						p[index] = player2;
 						num_pl--;
-						pl_color++;
-						pl_color++;
-						pl_color++;
 					}
 					if (p[1] == player1 && p[4] == player1 && p[7] == player1 || p[1] == player1 && p[2] == player1 && p[3] == player1 || p[1] == player1 && p[5] == player1 && p[9] == player1 || p[2] == player1 && p[5] == player1 && p[8] == player1 || p[3] == player1 && p[6] == player1 && p[9] == player1 || p[4] == player1 && p[5] == player1 && p[6] == player1 || p[7] == player1 && p[8] == player1 && p[9] == player1 || p[3] == player1 && p[5] == player1 && p[7] == player1) {
 						system("cls");
@@ -82,7 +78,7 @@ int main() {
 						cin.get();
 						continue;
 					}
-	
+
 					else if (p[1] == player2 && p[4] == player2 && p[7] == player2 || p[1] == player2 && p[2] == player2 && p[3] == player2 || p[1] == player2 && p[5] == player2 && p[9] == player2 || p[2] == player2 && p[5] == player2 && p[8] == player2 || p[3] == player2 && p[6] == player2 && p[9] == player2 || p[4] == player2 && p[5] == player2 && p[6] == player2 || p[7] == player2 && p[8] == player2 && p[9] == player2 || p[3] == player2 && p[5] == player2 && p[7] == player2) {
 						system("cls");
 						game = 0;
@@ -99,24 +95,33 @@ int main() {
 		}
 		else if (menu == 3) {
 			system("cls");
-			cout << "[ ] Игрок 1\n";
-			cout << "[1] Ник " << setw(6) << "| " << player1_name;
-			cout << "\n[2] Фигура " << setw(3) << "| " << player1;
-			cout << "\n[0] Выход";
-			cout << "\n>> ";
-			cin >> st_pl1;
-			if (st_pl1 == 1) {
-				string edit_plyaer1_name;
-				edit_plyaer1_name = player1_name;
-				cin >> edit_plyaer1_name;
-			
+			cout << "[1] Игроки";
+			cout << "[0] Назад";
+			cin >> menu_3;
+			if (menu_3 == 1) {
+				system("cls");
+				cout << "[ ] Игрок 1\n";
+				cout << "[1] Ник " << setw(6) << "| " << player1_name;
+				cout << "\n[2] Фигура " << setw(3) << "| " << player1;
+				cout << "\n[0] Назад";
+				cout << "\n>> ";
+				cin >> st_pl1;
+				if (st_pl1 == 1) {
+					string edit_plyaer1_name;
+					edit_plyaer1_name = player1_name;
+					cin >> edit_plyaer1_name;
+
+				}
+				else if (st_pl1 == 2) {
+					char edit_player1;
+					cin >> edit_player1;
+					player1 = edit_player1;
+				}
+				else if (st_pl1 == 0) {
+					continue;
+				}
 			}
-			else if (st_pl1 == 2) {
-				char edit_player1;
-				cin >> edit_player1;
-				player1 = edit_player1;
-			}
-			else if (st_pl1 == 0) {
+			else if (menu_3 == 0) {
 				continue;
 			}
 		}
