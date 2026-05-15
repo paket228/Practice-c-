@@ -4,8 +4,7 @@
 #include <ctime>
 #include <Windows.h>
 using namespace std;
-static void statistika(short win_1,short win_2,short lose_1,short lose_2,short point_1,short point_2
-)
+static void statistika(short win_1, short win_2, short lose_1, short lose_2, short point_1, short point_2)
 
 {
 	int _;
@@ -26,7 +25,7 @@ static void nastroiky(string Red, string Green, string Yellow, string Blue, char
 	cout << ind_clr_1;
 	cout << "[ ] Настройки [ ]\n";
 	cout << "[1] " << P1_n << "\n";
-	cout << "[2] "<< P2_n << "\n";
+	cout << "[2] " << P2_n << "\n";
 	cout << "\x1b[90m" << ">> " "\x1b[0m";
 	cin >> nastr;
 	if (nastr == 1) {
@@ -51,13 +50,24 @@ static void nastroiky(string Red, string Green, string Yellow, string Blue, char
 				cout << "\x1b[90m" << ">> " << "\x1b[0m";
 				cin >> ind_clr_1;
 
-				
+
 			}
 		}
 	}
 	if (nastr == 2) {
 
 	}
+}
+
+void MAP() {
+	int map[3][3] = {
+		{0, 0, 0},
+		{0, 0, 0},
+		{0, 0, 0}
+	};
+	cout << map;
+	short _;
+	cin >> _;
 }
 int main()
 {
@@ -72,7 +82,7 @@ int main()
 	short lose_2 = 0;
 	short point_1 = 0;
 	short point_2 = 0;
-	
+
 	string asd;
 	string Red = "\x1b[91m";
 	string Green = "\x1b[92m";
@@ -85,10 +95,12 @@ int main()
 	string color[] = { asd, Red, Green, Yellow, Blue };
 	int ind_clr_1 = 0;
 
+	
+
 	while (true)
 	{
 		system("cls");
-		cout << ind_clr_1;
+
 		cout << "\x1b[91m" << "[ ] Крестики нолики v2 [ ]\n" << "\x1b[0m";
 		cout << "\x1b[92m" << "[1] Играть\n" << "\x1b[0m";
 		cout << "\x1b[94m" << "[2] Настройки\n" << "\x1b[0m";
@@ -97,13 +109,14 @@ int main()
 		cout << "\x1b[92m" ">> " << "\x1b[0m";
 		cin >> MAIN;
 		if (MAIN == 1) {
-			
+			MAP;
+
 		}
 		else if (MAIN == 2) {
 			nastroiky(Red, Green, Yellow, Blue, P1, P2, P1_n, P2_n, color, ind_clr_1);
 		}
 		else if (MAIN == 3) {
-			statistika(win_1,win_2,lose_1,lose_2,point_1,point_2);
+			statistika(win_1, win_2, lose_1, lose_2, point_1, point_2);
 		}
 		else if (MAIN == 0) {
 			cout << "Ждём вас ещё!";
