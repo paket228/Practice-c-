@@ -4,273 +4,145 @@
 #include <ctime>
 #include <Windows.h>
 using namespace std;
-void MENI() {
-	system("cls");
-	cout << "[ ] Крестики нолики\n";
-	cout << "[1]" << "\x1b[94m" << " Начать игру\n" << "\x1b[0m";
-	cout << "[2] Статистика\n";
-	cout << "[3] Настройки\n";
-	cout << "[0] " << "\x1b[90m" << "Выход\n" << "\x1b[0m";
-	cout << "\x1b[93m" << ">> " << "\x1b[0m";
-
-}
-void map(char p[]) {
-	system("cls");
-	cout << "[ ] Крестики нолики\n\n";
-	cout << setw(6) << p[1] << " | " << p[2] << " | " << p[3] << endl;
-	cout << setw(16) << "-----------\n";
-	cout << setw(6) << p[4] << " | " << p[5] << " | " << p[6] << endl;
-	cout << setw(16) << "-----------\n";
-	cout << setw(6) << p[7] << " | " << p[8] << " | " << p[9] << endl;
-
-}
-static int RAND(char p[]) {
-	system("cls");
-	int max = 9, min = 1;
-	int random_number = rand() % (max - min + 1) + min;
-
-
-	return random_number;
-}
-void GAME_SINGL(string player1_name, char p[], char player1, string pl1_color_1, string pl1_color_2, int random_number, int win_1, int lose_1, int point_1, int win_3, int lose_3, int point_3, char comp, string comp_name) {
-	short num_pl = 1;
-	int index;
-	int game = 1;
-
-
-	while (game == 1) {
-		system("cls");
-		map(p);
-		if (num_pl == 1) {
-				
-			cout << "Ходит " << pl1_color_1 << player1_name << pl1_color_2 << " : ";
-			cin >> index;
-			p[index] = player1;
-			num_pl++;
-
-		}
-		else if (num_pl == 2) {
-			cout << "Ходит " << comp_name << " : ";
-			RAND(p) == index;
-			p[index] = comp;
-			num_pl--;
-		}
-		if (p[1] == player1 && p[4] == player1 && p[7] == player1 || p[1] == player1 && p[2] == player1 && p[3] == player1 || p[1] == player1 && p[5] == player1 && p[9] == player1 || p[2] == player1 && p[5] == player1 && p[8] == player1 || p[3] == player1 && p[6] == player1 && p[9] == player1 || p[4] == player1 && p[5] == player1 && p[6] == player1 || p[7] == player1 && p[8] == player1 && p[9] == player1 || p[3] == player1 && p[5] == player1 && p[7] == player1) {
-			system("cls");
-			game = 0;
-			cout << "ПОБЕДИЛ " << player1_name << endl;
-
-			win_1 = win_1 + 1;
-			lose_3 = lose_3 - 1;
-			point_1 = point_1 + 5;
-			point_3 = point_3 - 5;
-			cout << win_1 << " " << lose_3 << " "  << point_1 << " " << point_3;
-			cin.ignore();
-			cin.get();
+static void MAP_RENDER() {
+	const int i1 = 3;
+	const int i2 = 3;
+	int MAP_1[i1][i2] = {
+		{0, 0, 0},
+		{0, 0, 0},
+		{0, 0, 0}
+	};
+	char MAP_2[i1][i2] = {
+		{'#', '#', '#'},
+		{'#', '#', '#'},
+		{'#', '#', '#'}
+	};
+	cout << " -----" << setw(7) << " -----" << setw(8) << " -----\n";
+	for (int i = 0; i < i1; i++) {
+		for (int j = 0; j < i2; j++) {
+			cout << " | " << MAP_2[i][j] << " | ";
 		}
 
-		else if (p[1] == comp && p[4] == comp && p[7] == comp || p[1] == comp && p[2] == comp && p[3] == comp || p[1] == comp && p[5] == comp && p[9] == comp || p[2] == comp && p[5] == comp && p[8] == comp || p[3] == comp && p[6] == comp && p[9] == comp || p[4] == comp && p[5] == comp && p[6] == comp || p[7] == comp && p[8] == comp && p[9] == comp || p[3] == comp && p[5] == comp && p[7] == comp) {
-			system("cls");
-			game = 0;
-			cout << "ПОБЕДИЛ " << comp_name << endl;
-			cin.ignore();
-			cin.get();
-			win_3 = win_3 + 1;
-			lose_1 = lose_1 - 1;
-			point_3 = point_3 + 5;
-			point_1 = point_1 - 5;
-			cin.ignore();
-			cin.get();
+		cout << endl; // переход на новую строку после вывода строки
+		cout << " -----" << setw(7) << " -----" << setw(8) << " -----\n";
+	}
+	
+}
+static void GAME(char P1, char P2, string P1_n, string P2_n, char MAP_2, const int** i1, const int i2, string asd, string Red, string Green, string Yellow, string Blue) {
+	cout << "Ходит " << Red << P1_n << asd;
+	cin >> i1;
+	cin >> i2;
+	P1 = MAP_2[i1][i2];
+}
+static void statistika(short win_1, short win_2, short lose_1, short lose_2, short point_1, short point_2)
+
+{
+	int _;
+	system("cls");
+	cout << "[ ] Статистика игроков [ ]\n";
+	cout << setw(15) << "\x1b[92m" << " W" << "\x1b[0m" << setw(9) << "\x1b[91m" << "L" << "\x1b[0m" << setw(9) << "\x1b[93m" << "P\n" << "\x1b[0m";
+	cout << "Игрок 1" << setw(5) << win_1 << setw(5) << lose_1 << setw(5) << point_1 << endl << endl;
+	cout << "Игрок 2" << setw(5) << win_2 << setw(5) << lose_2 << setw(5) << point_2 << endl;
+	cout << "\x1b[90m" << "*Введите любое число для выхода*\n" << ">> " << "\x1b[0m";
+	cin >> _;
+}
+static void nastroiky(string Red, string Green, string Yellow, string Blue, char P1, char P2, string P1_n, string P2_n, string color[], int ind_clr_1)
+{
+
+	short nastr;
+	system("cls");
+	cout << ind_clr_1;
+	cout << "[ ] Настройки [ ]\n";
+	cout << "[1] " << P1_n << "\n";
+	cout << "[2] " << P2_n << "\n";
+	cout << "\x1b[90m" << ">> " "\x1b[0m";
+	cin >> nastr;
+	if (nastr == 1) {
+		int nastr_1;
+		cout << "[ ] Найстройки " << color[ind_clr_1] << P1_n << "\x1b[0m" << " [ ] \n";
+		cout << "[1] Ник " << setw(5) << P1_n;
+		cout << "\n[2] Фигура" << setw(5) << P1;
+		cout << "\x1b[90m" << "\n>> " << "\x1b[0m";
+		cin >> nastr_1;
+		if (nastr_1 == 1) {
+			int nastr_1_1;
+			cout << "[ ] Настройки Ника " << P1_n << " [ ] \n";
+			cout << "[1] Цвет\n";
+			cout << "[2] Ник\n" "\x1b[90m" << ">> " << "\x1b[0m";
+			cin >> nastr_1_1;
+			if (nastr_1_1 == 1) {
+				cout << "[ ] Настройка цвета [ ]\n";
+				cout << "[1] Красный\n";
+				cout << "[2] Зелёный\n";
+				cout << "[3] Жёлтый\n";
+				cout << "[4] Синий\n ";
+				cout << "\x1b[90m" << ">> " << "\x1b[0m";
+				cin >> ind_clr_1;
+
+
+			}
 		}
 	}
+	if (nastr == 2) {
 
-}
-int GAME(string player1_name, string player2_name, string pl2_color_2, string pl2_color_1, string pl1_color_2, string pl1_color_1, char p[], char player1, char player2, int win_1, int win_2, int lose_1, int lose_2, int point_1, int point_2, int point_3) {
-	short num_pl = 1;
-	int index;
-	int game = 1;
-
-
-	while (game == 1) {
-		system("cls");
-		map(p);
-		if (num_pl == 1) {
-			cout << "Ходит " << pl1_color_1 << player1_name << pl1_color_2 << " : ";
-			cin >> index;
-			p[index] = player1;
-			num_pl++;
-
-		}
-		else if (num_pl == 2) {
-			cout << "Ходит " << pl2_color_1 << player2_name << pl2_color_2 << " : ";
-			cin >> index;
-			p[index] = player2;
-			num_pl--;
-		}
-		if (p[1] == player1 && p[4] == player1 && p[7] == player1 || p[1] == player1 && p[2] == player1 && p[3] == player1 || p[1] == player1 && p[5] == player1 && p[9] == player1 || p[2] == player1 && p[5] == player1 && p[8] == player1 || p[3] == player1 && p[6] == player1 && p[9] == player1 || p[4] == player1 && p[5] == player1 && p[6] == player1 || p[7] == player1 && p[8] == player1 && p[9] == player1 || p[3] == player1 && p[5] == player1 && p[7] == player1) {
-			system("cls");
-			game = 0;
-			cout << "ПОБЕДИЛ " << player1_name << endl;
-
-			win_1 = win_1 + 1;
-			lose_2 = lose_2 - 1;
-			point_1 = point_1 + 5;
-			point_2 = point_2 - 5;
-			cout << win_1 << lose_2 << point_1 << point_2;
-			cin.ignore();
-			cin.get();
-		}
-
-		else if (p[1] == player2 && p[4] == player2 && p[7] == player2 || p[1] == player2 && p[2] == player2 && p[3] == player2 || p[1] == player2 && p[5] == player2 && p[9] == player2 || p[2] == player2 && p[5] == player2 && p[8] == player2 || p[3] == player2 && p[6] == player2 && p[9] == player2 || p[4] == player2 && p[5] == player2 && p[6] == player2 || p[7] == player2 && p[8] == player2 && p[9] == player2 || p[3] == player2 && p[5] == player2 && p[7] == player2) {
-			system("cls");
-			game = 0;
-			cout << "ПОБЕДИЛ " << player2_name;
-			cin.ignore();
-			cin.get();
-			win_2 = win_2 + 1;
-			lose_1 = lose_1 - 1;
-			point_2 = point_2 + 5;
-			point_1 = point_1 - 5;
-		}
 	}
-	return win_1, win_2, lose_1, lose_2, point_1, point_2;
 }
-
-int main(int random_number) {
+int main()
+{
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
-	// переменные которые не должны обновляться каждую новую игру (вовремя уже запущеной проги), тк они изменяються во время игры
-	int menu;
-	int menu_1;
-	char player1 = 'O';
-	char player2 = 'X';
-	char comp = 'X';
-	string player1_name = "Игрок 1";
-	string player2_name = "Игрок 2";
-	string comp_name = "Компьютер";
-	int win_1 = 1;
-	int win_2 = 1;
-	int win_3 = 1;
-	int lose_1 = 1;
-	int lose_2 = 1;
-	int lose_3 = 1;
-	int point_1 = 10;
-	int point_2 = 10;
-	int point_3 = 10;
-	while (true) {
-		// переменные которые должны обновляться каждую новую игру (вовремя уже запущеной проги)
 
-		char p_0 = '0', p_1 = '1', p_2 = '2', p_3 = '3', p_4 = '4', p_5 = '5', p_6 = '6', p_7 = '7', p_8 = '8', p_9 = '9';
-		char p[10] = { p_0, p_1, p_2, p_3, p_4, p_5, p_6, p_7, p_8, p_9 };
-		short num_pl = 1;
-		string pl1_color_1 = "\x1b[94m";
-		string pl1_color_2 = "\x1b[0m";
-		string pl2_color_1 = "\x1b[91m";
-		string pl2_color_2 = "\x1b[0m";
-		int game = 1;
-		int menu_3;
-		short st_pl1;
-		short st_pl2;
+	short MAIN;
 
-		MENI();
-		cin >> menu;
-		if (menu == 1) {
+	short win_1 = 0;
+	short win_2 = 0;
+	short lose_1 = 0;
+	short lose_2 = 0;
+	short point_1 = 0;
+	short point_2 = 0;
+
+	string asd = "\x1b[0m";
+	string Red = "\x1b[91m";
+	string Green = "\x1b[92m";
+	string Yellow = "\x1b[93m";
+	string Blue = "\x1b[94m";
+	char P1 = 'X';
+	char P2 = 'O';
+	string P1_n = "Игрок 1";
+	string P2_n = "Игрок 2";
+	string color[] = { asd, Red, Green, Yellow, Blue };
+	int ind_clr_1 = 0;
+	int while_ = 1;
+
+
+	while (while_ == 1)
+	{
+		system("cls");
+
+		cout << "\x1b[91m" << "[ ] Крестики нолики v2 [ ]\n" << "\x1b[0m";
+		cout << "\x1b[92m" << "[1] Играть\n" << "\x1b[0m";
+		cout << "\x1b[94m" << "[2] Настройки\n" << "\x1b[0m";
+		cout << "\x1b[93m" << "[3] Статистика\n" << "\x1b[0m";
+		cout << "\x1b[90m" << "[0] Выход\n" << "\x1b[0m";
+		cout << "\x1b[92m" ">> " << "\x1b[0m";
+		cin >> MAIN;
+		if (MAIN == 1) {
 			system("cls");
-			cout << "[ ] Крестики нолики\n";
-			cout << "[1] Одиночная игра\n";
-			cout << "[2] Для двух игроков\n";
-			cout << "[0] " << "\x1b[90m" << "Назад\n" << "\x1b[0m" << ">> ";
-			cin >> menu_1;
-			if (menu_1 == 1) {
-				map(p);
-				GAME_SINGL(player1_name, p, player1, pl1_color_1, pl1_color_2, random_number, win_1,  lose_1,  point_1, win_3, lose_3, point_3, comp, comp_name);
+			MAP_RENDER();
+			int _;
+			cin >> _;
 
-				
-			}
-			else if (menu_1 == 2) {
-
-				map(p);
-				GAME(player1_name, player2_name, pl2_color_2, pl2_color_1, pl1_color_2, pl1_color_1, p, player2, player1, win_1, win_2, lose_1, lose_2, point_1, point_2, point_3);
-			}
 		}
-		else if (menu == 2) {
-
-			system("cls");
-			short exit;
-
-			cout << "[ ] Статистика\n";
-			cout << "[#] " << setw(20) << "\x1b[92m" << "W" << "\x1b[0m" << setw(9) << "\x1b[91m" << "L" << "\x1b[0m" << setw(9) << '|' << " Очки\n";
-			cout << "\n[#] " << player1 << setw(15) << win_1 << setw(5) << lose_1 << setw(9) << "|" << " " << point_1;
-			cout << endl;
-			cout << "\n[#] " << player2 << setw(15) << win_2 << setw(5) << lose_2 << setw(9) << "|" << " " << point_2;
-			cout << "\nВвод: ";
-
-			cin >> exit;
+		else if (MAIN == 2) {
+			nastroiky(Red, Green, Yellow, Blue, P1, P2, P1_n, P2_n, color, ind_clr_1);
 		}
-		//НАСТРОЙКИ
-		else if (menu == 3) {
-			system("cls");
-			cout << "[ ] Настройки\n";
-			cout << "[1] Игрок 1\n";
-			cout << "[2] Игрок 2\n";
-			cout << "[0] Назад\n";
-			cin >> menu_3;
-			if (menu_3 == 1) {
-				system("cls");
-				cout << "[ ] " << player1_name << "\n";
-				cout << "[1] Ник " << setw(6) << "| " << player1_name;
-				cout << "\n[2] Фигура " << setw(3) << "| " << player1;
-				cout << "\n[0] Назад";
-				cout << "\n>> ";
-				cin >> st_pl1;
-				if (st_pl1 == 1) {
-					cout << "Введите ник: ";
-					cin >> player1_name;
-					continue;
-				}
-				else if (st_pl1 == 2) {
-					cout << "Введите символ: ";
-					cin >> player1;
-				}
-				else if (st_pl1 == 0) {
-					continue;
-				}
-			}
-			else if (menu_3 == 2) {
-				system("cls");
-				cout << "[ ] " << player2_name << "\n";
-				cout << "[1] Ник " << setw(6) << "| " << player2_name;
-				cout << "\n[2] Фигура " << setw(3) << "| " << player2;
-				cout << "\n[0] Назад";
-				cout << "\n>> ";
-				cin >> st_pl2;
-				if (st_pl2 == 1) {
-					cout << "Введите ник: ";
-					cin >> player2_name;
-					continue;
-				}
-				else if (st_pl2 == 2) {
-					cout << "Введите символ: ";
-					cin >> player2;
-					continue;
-				}
-				else if (st_pl2 == 0) {
-					continue;
-				}
-			}
+		else if (MAIN == 3) {
+			statistika(win_1, win_2, lose_1, lose_2, point_1, point_2);
 		}
-
-		else if (menu == 0) {
-			exit(1);
-		}
-
-		else {
-			system("cls");
-			cout << "\x1b[91m" << "Попробуйте ещё раз" << "\x1b[90m";
-			cin.ignore();
-			cin.get();
-
+		else if (MAIN == 0) {
+			while_ = 0;
+			cout << "Ждём вас ещё!";
+			
 		}
 	}
-	return 0;
 }
